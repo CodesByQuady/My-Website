@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<header>
+<title>Online Porfolio</title>
+</header>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, html{
+	height : 100%;
+}
+.hero-image{
+	height : 50%;
+	background-image : linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url("herowall.jpg");
+	height : 100%;
+	background-position : center;
+	background-repeat : no-repeat;
+	background-size : cover;
+}
+.hero-text{
+	font-family : Cursive;
+	text-align : center;
+	position : absolute;
+	top : 50%;
+	left : 50%;
+	transform : translate(-50%,-50%);
+	color : white;
+	font-size : 16px;
+}
+button{
+	
+	font-size : 24px;
+	display : inline-block;
+	background-color : black;
+	color : whitesmoke;
+	font-family : Times New Roman;
+}
+button:hover{
+	opacity : 0.7;
+}
+. card{
+	box-shadow : 0 8px 16px rgba(0,0,0,0.2);
+	max-width : 300px;
+	margin : auto;
+	text-align : center;
+}
+.title{
+	color : gray;
+	font-size : 18px;
+}
+a{
+	text-decoration : none;
+	font-size : 22px;
+	color : white;
+}
+.modal{
+	display : none;
+	position : fixed;
+	z-index : 1;
+	padding : 50px;
+	padding-top : 100px;
+	left : 0;
+	top : 0;
+	width : 100%;
+	height : 100%;
+	overflow : auto;
+	background-color : rgb(0,0,0);
+	background-color : rgba(0,0,0,0.4);
+}
+.modal-content{
+	background-color : black;
+	color : white;
+	font-size : 18px;
+	margin : auto;
+	padding : 20px;
+	border : 2px solid #888;
+	width : 80%;
+}
+.close{
+	color : #aaaaaa;
+	float : right;
+	font-size : 28px;
+	font-weight : bold;
+}
+.close:hover, .close:focus{
+	color : #000;
+	text-decoration : none;
+	cursor : pointer;
+}
+.card{
+	border : 2px solid white;
+	border-radius : 12px; 
+	background-color : black;
+	color : white;
+	display : block;
+	padding : 10px;
+	box-shadow : 0 4px 8px 0 rgba(0,0,0,0.2);
+	transition : 0.3s;
+	width : 20%;
+}
+.card:hover{
+	box-shadow : 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.container{
+	padding : 2px 16px;
+	text-align : center;
+}
+
+input[type=text], select, textarea{
+	width : 100%;
+	padding : 12px;
+	border : 1px solid #ccc;
+	border-radius : 4px;
+	box-sizing : border-box;
+	margin-top : 6px;
+	margin-bottom : 16px;
+	resize : vertical;
+}
+
+input[type=submit]{
+	background-color : #4caf50;
+	color : white;
+	padding : 12px 20px;
+	border : none;
+	border-radius : 4px;
+	cursor : pointer;
+}
+input[type="submit"]:hover{
+	background-color : #45a049;
+	padding : 20px;
+}
+.formcontainer{
+	border-radius : 5px;
+	background-color : #fefefeS;
+	color : white;
+	padding : 20px;
+}
+#question{
+	color : lightgray;
+}
+#answer{
+	color : darkgray;
+}
+
+</style>
+
+<body>
+<!-- Hero Image -->
+<div class="hero-image">
+<div class="hero-text">
+<h1>I'm Quadree Randolph</h1>
+<h3> Just A Guy That Likes Coding</h3>
+<button id="aboutMeBtn" onclick="aboutMe();">About Me</button>&nbsp;&nbsp;
+<button id="commentsBtn"onclick="comments();">Comments</button>&nbsp;&nbsp;
+<button id="questionBtn"onclick="faq();">Questions</button>&nbsp;&nbsp;
+<button id="contactBtn"onclick="contact();">Contact</button>&nbsp;&nbsp;
+</div>
+</div>
+<!-- About Me Modal/With Social Media Links Card -->
+<div align="center"id="aboutMe" class="modal">
+<div class="modal-content">
+<span class="close">&times;</span>
+<!-- Card Within The Modal -->
+<div align="center" class="card">
+<img src="glasses.jpg" alt="Avi" style="width: 100%">
+<div class ="container">
+<p>Independent Web Developer</p>
+<p>Philadelphia,PA</p>
+<p>24,M</p>
+</div>
+</div>
+<h2 align="center">A Brief Summary About Myself</h2>
+<p align="center">Hello, I am a Philadelphia native. I love my city and I also love coding.<br><br>If I'm not busy, I code a couple hours a day. Which lead me to being able to code like this.<br><br>I plan on becoming a web developer, as well as a Javascript Game Developer.</p>
+</div>
+</div>
+
+<!-- Comments Form -->
+<div id="comments" class="modal">
+<div class="modal-content">
+<span class="close">&times;</span>
+<form method="post">
+<div class="formcontainer">
+	<h2>Feel Free To Send Me Some Comments.</h2>
+	<label for="fname">First Name</label>
+	<input type="text" placeholder="First Name..." required="required"><br>
+	<label for="email">E-mail</label>
+	<input type="text" placeholder="E-mail..." required="required"></label><br>
+	<label for="comments">Comments</label>
+	<textarea id="comments" rows="4" cols="20" placeholder="Enter Comments" required="required"></textarea>
+	<button type="submit" id="sendBtn"><span>Send</span></button>
+	</div>
+</form>
+</div>
+</div>
+<!-- Questions Form -->
+<div id="questions" class="modal">
+<div class="modal-content">
+<span class="close">&times;</span>
+<form id="faqForm"action="">
+<h1>Questions I've Been Getting Lately</h1>
+<div class="tab">
+<h2><span id="question">How Long Do How You Been Coding For?</span></h2><br>
+<span id="answer"><p>
+I've been coding heavily since November of 2020. I love coding, no matter the language, 
+I love how logical the coding is and I enjoy creating a gameplan to complete a task.
+</p></span>
+</div>
+<div class="tab">
+<h2><span id="question">Did You Go To School For This?</span></h2><br>
+<span id="answer"><p>
+Yes and no,<br><br>I went to school for computer science, which my favorite classes were programming classes (Python, JS, HTML/CSS) ,
+but school became less of priority. I've also learned majority of the code<br>
+you see here on my own. It took a lot of hours, but I like it.
+</p>
+</div>
+<div class="tab">
+<h2><span id="question">Is it boring?</span></h2><br>
+<span id="answer"><p>
+Very boring and its bad on the eyes once you realize how long you stare at the screen.<br>
+But, the outcome is worth it. I don't mind taking a long time on a project if the outcome looks good.<br>
+So it's boring, but if you're more of a turtle instead of the rabbit, then you'll enjoy it like I do.
+</p>
+</div>
+</form>
+</div>
+</div>
+<div align="center"id="contact" class="modal">
+<div class="modal-content">
+<span class="close">&times;</span>
+<div class="card">
+<img src="red.jpg" alt="red shirt" style="width:100%;"></img>
+<p>Feel free to contact me. My socials and email are at the bottom of my card.</p>
+<a href="http://www.github.com/CodesByQuady"><i class="fa fa-github"></i></a>
+<a href="mailto: quadree.randolph97@gmail.com"><i class="fa fa-envelope"></i></a>
+</div>
+</div>
+</div>
+
+</body>
+<script>
+function aboutMe(){
+	var modal = document.getElementById("aboutMe"); // Grabs the modal.
+	var button = document.getElementById("aboutMeBtn"); // Button will be the trigger.
+	var span = document.getElementsByClassName("close")[0]; // This number goes up as many buttons there are.
+	button.onclick = function(){
+		modal.style.display = "block";
+	}
+	span.onclick = function(){
+		modal.style.display = "none";
+	}
+	window.onclick = function(event){	// The user can click outside the screen.
+		if (event.target == modal){
+			modal.style.display = "none";
+		}
+	}
+}
+function comments(){
+	var modal = document.getElementById("comments"); // Grabs the modal.
+	var button = document.getElementById("commentsBtn"); // Button will be the trigger.
+	var span = document.getElementsByClassName("close")[1]; // This number goes up as many buttons there are.
+	button.onclick = function(){
+		modal.style.display = "block";
+	}
+	span.onclick = function(){
+		modal.style.display = "none";
+	}
+	window.onclick = function(event){	// The user can click outside the screen.
+		if (event.target == modal){
+			modal.style.display = "none";
+		}
+	}
+}
+function faq(){
+	var modal = document.getElementById("questions");
+	var button = document.getElementById("questionBtn");
+	var span = document.getElementsByClassName("close")[2];
+	button.onclick = function(){
+		modal.style.display = "block";
+	}
+	span.onclick = function(){
+		modal.style.display = "none";
+	}
+	window.onclick = function(event){
+		if(event.target == modal){
+			modal.style.display = "none";
+		}
+	}
+}
+function contact(){
+	var modal = document.getElementById("contact");
+	var button = document.getElementById("contactBtn");
+	var span = document.getElementsByClassName("close")[3];
+	button.onclick = function(){
+		modal.style.display = "block";
+	}
+	span.onclick = function(){
+		modal.style.display = "none";
+	}
+	window.onclick = function(event){
+		if(event.target == modal){
+			modal.style.display = "none";
+		}
+	}
+}
+
+</script>
+
+</html>
+
+
